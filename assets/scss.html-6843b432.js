@@ -1,0 +1,93 @@
+import{_ as n}from"./plugin-vue_export-helper-c27b6911.js";import{o as s,c as a,d as p}from"./app-aed23af1.js";const t={},e=p(`<h2 id="安装方式" tabindex="-1"><a class="header-anchor" href="#安装方式" aria-hidden="true">#</a> 安装方式</h2><div class="language-javascript line-numbers-mode" data-ext="js"><pre class="language-javascript"><code>npm install scss
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div></div></div><h2 id="scss-两种注释" tabindex="-1"><a class="header-anchor" href="#scss-两种注释" aria-hidden="true">#</a> SCSS 两种注释</h2><p>单行注释编译后不会输出到源码里，多行注释编译后会输出到源</p><h2 id="scss-scss-变量详解" tabindex="-1"><a class="header-anchor" href="#scss-scss-变量详解" aria-hidden="true">#</a> SCSS SCSS 变量详解</h2><h4 id="scss-变量定义规则" tabindex="-1"><a class="header-anchor" href="#scss-变量定义规则" aria-hidden="true">#</a> Scss 变量定义规则</h4><p>变量以美元($)开头,后面跟变量名<br> 变量名不以数字开头可包含数字、下划线、横线、连接符<br> 写法通 css,即变量名和值之间用冒号分隔<br> 变量要先定义，后使用</p><h4 id="css-方式" tabindex="-1"><a class="header-anchor" href="#css-方式" aria-hidden="true">#</a> css 方式</h4><div class="language-css line-numbers-mode" data-ext="css"><pre class="language-css"><code><span class="token selector">:root</span> <span class="token punctuation">{</span>
+  <span class="token property">--color</span><span class="token punctuation">:</span> #f00<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span class="token selector">body</span> <span class="token punctuation">{</span>
+  <span class="token property">--border-color</span><span class="token punctuation">:</span> #f2f2f2<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span class="token selector">.header</span> <span class="token punctuation">{</span>
+  <span class="token property">--background-color</span><span class="token punctuation">:</span> #fff<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span class="token selector">p</span> <span class="token punctuation">{</span>
+  <span class="token property">color</span><span class="token punctuation">:</span> <span class="token function">var</span><span class="token punctuation">(</span>--color<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token property">border-color</span><span class="token punctuation">:</span> <span class="token function">var</span><span class="token punctuation">(</span>--border-color<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h4 id="scss-定义变量" tabindex="-1"><a class="header-anchor" href="#scss-定义变量" aria-hidden="true">#</a> scss 定义变量</h4><div class="language-css line-numbers-mode" data-ext="css"><pre class="language-css"><code>$<span class="token property">primary</span><span class="token punctuation">:</span>green<span class="token punctuation">;</span>
+<span class="token selector">.btn</span><span class="token punctuation">{</span>
+  <span class="token property">background-color</span><span class="token punctuation">:</span>$primary
+<span class="token punctuation">}</span>
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h4 id="scss-默认值-优先使用-333-默认值不会覆盖前面样式" tabindex="-1"><a class="header-anchor" href="#scss-默认值-优先使用-333-默认值不会覆盖前面样式" aria-hidden="true">#</a> scss 默认值 优先使用 #333;默认值不会覆盖前面样式</h4><div class="language-css line-numbers-mode" data-ext="css"><pre class="language-css"><code>$<span class="token property">color</span><span class="token punctuation">:</span>#333
+ $<span class="token property">color</span><span class="token punctuation">:</span>#666 !default
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div></div></div><h2 id="scss-混合指令" tabindex="-1"><a class="header-anchor" href="#scss-混合指令" aria-hidden="true">#</a> SCSS 混合指令</h2><p>mixin 是可以重复使用的一组 css 声明<br> mixin 有利于减少重复代码，只需声明一次，就可在文件中运用<br> 混合指令可以包含所有 css 规则，绝大部分 sass 规则，甚至可以通过参数引入变量，输出多样化的样式<br> 使用参数建议添加默认值</p><div class="language-css line-numbers-mode" data-ext="css"><pre class="language-css"><code><span class="token atrule"><span class="token rule">@mixin</span> <span class="token function">block-padding</span><span class="token punctuation">(</span>$top：0<span class="token punctuation">,</span> $right：0<span class="token punctuation">,</span> $bottom：0<span class="token punctuation">,</span> $left：0<span class="token punctuation">)</span></span> <span class="token punctuation">{</span>
+  <span class="token property">padding-top</span><span class="token punctuation">:</span> $top<span class="token punctuation">;</span>
+  <span class="token property">padding-right</span><span class="token punctuation">:</span> $right<span class="token punctuation">;</span>
+  <span class="token property">padding-bottom</span><span class="token punctuation">:</span> $bottom<span class="token punctuation">;</span>
+  <span class="token property">padding-left</span><span class="token punctuation">:</span> $left<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token atrule"><span class="token rule">@mixin</span> <span class="token function">linear-gradient</span><span class="token punctuation">(</span>$direction<span class="token punctuation">,</span> $gradients...<span class="token punctuation">)</span></span> <span class="token punctuation">{</span>
+  <span class="token property">background-color</span><span class="token punctuation">:</span> <span class="token function">nth</span><span class="token punctuation">(</span>$gridents<span class="token punctuation">,</span> 1<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token property">background-image</span><span class="token punctuation">:</span> <span class="token function">linear-gradient</span><span class="token punctuation">(</span>$direction<span class="token punctuation">,</span> $gradients<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token selector">.container</span> <span class="token punctuation">{</span>
+  // 指定变量名传参<span class="token punctuation">;</span>可以不按照顺序
+  <span class="token atrule"><span class="token rule">@include</span> <span class="token function">block-padding</span><span class="token punctuation">(</span>$<span class="token property">top</span><span class="token punctuation">:</span> 10px<span class="token punctuation">,</span> $<span class="token property">bottom</span><span class="token punctuation">:</span> 20px<span class="token punctuation">,</span> $<span class="token property">right</span><span class="token punctuation">:</span> 15px<span class="token punctuation">,</span> $<span class="token property">left</span><span class="token punctuation">:</span> 15px<span class="token punctuation">)</span><span class="token punctuation">;</span></span>
+  // 按照顺序填入
+  <span class="token atrule"><span class="token rule">@include</span> <span class="token function">block-padding</span><span class="token punctuation">(</span>10px<span class="token punctuation">,</span> 20px<span class="token punctuation">,</span> 15px<span class="token punctuation">,</span> 15px<span class="token punctuation">)</span><span class="token punctuation">;</span></span>
+  <span class="token atrule"><span class="token rule">@include</span> <span class="token function">linear-gradient</span><span class="token punctuation">(</span>to right<span class="token punctuation">,</span> #f00<span class="token punctuation">,</span> red<span class="token punctuation">,</span> yellow<span class="token punctuation">)</span><span class="token punctuation">;</span></span>
+<span class="token punctuation">}</span>
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h2 id="逻辑运算符" tabindex="-1"><a class="header-anchor" href="#逻辑运算符" aria-hidden="true">#</a> 逻辑运算符</h2><div class="language-css line-numbers-mode" data-ext="css"><pre class="language-css"><code>$<span class="token property">width</span><span class="token punctuation">:</span> 100<span class="token punctuation">;</span>
+$<span class="token property">height</span><span class="token punctuation">:</span> 200<span class="token punctuation">;</span>
+$<span class="token property">last</span><span class="token punctuation">:</span> false<span class="token punctuation">;</span>
+<span class="token selector">div</span> <span class="token punctuation">{</span>
+  <span class="token atrule"><span class="token rule">@if</span> $width&gt;50 <span class="token keyword">and</span> $height&gt;100</span> <span class="token punctuation">{</span>
+    <span class="token property">font-size</span><span class="token punctuation">:</span> 16px<span class="token punctuation">;</span>
+  <span class="token punctuation">}</span> <span class="token atrule"><span class="token rule">@else</span></span> <span class="token punctuation">{</span>
+    <span class="token property">font-size</span><span class="token punctuation">:</span> 14px<span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+  <span class="token atrule"><span class="token rule">@if</span> <span class="token keyword">not</span> $last</span> <span class="token punctuation">{</span>
+    <span class="token property">border-color</span><span class="token punctuation">:</span> red<span class="token punctuation">;</span>
+  <span class="token punctuation">}</span> <span class="token atrule"><span class="token rule">@else</span></span> <span class="token punctuation">{</span>
+    <span class="token property">border-color</span><span class="token punctuation">:</span> #e43698<span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h2 id="插值" tabindex="-1"><a class="header-anchor" href="#插值" aria-hidden="true">#</a> 插值</h2><p>可以用于：选择器、属性名、属性值、注释...</p><div class="language-css line-numbers-mode" data-ext="css"><pre class="language-css"><code>$<span class="token property">class-name</span><span class="token punctuation">:</span> danger<span class="token punctuation">;</span>
+$<span class="token property">attr</span><span class="token punctuation">:</span> color<span class="token punctuation">;</span>
+$<span class="token property">color-value</span><span class="token punctuation">:</span> yellow<span class="token punctuation">;</span>
+
+<span class="token selector">a.#</span><span class="token punctuation">{</span>$class-name<span class="token punctuation">}</span> <span class="token punctuation">{</span>
+  <span class="token selector">border-#</span><span class="token punctuation">{</span>$attr<span class="token punctuation">}</span><span class="token selector">: #</span><span class="token punctuation">{</span>$color-value<span class="token punctuation">}</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h2 id="流程控制指令" tabindex="-1"><a class="header-anchor" href="#流程控制指令" aria-hidden="true">#</a> 流程控制指令</h2><div class="language-css line-numbers-mode" data-ext="css"><pre class="language-css"><code><span class="token atrule"><span class="token rule">@mixin</span> <span class="token function">triangle</span><span class="token punctuation">(</span>$<span class="token property">direction</span><span class="token punctuation">:</span> top<span class="token punctuation">,</span> $<span class="token property">size</span><span class="token punctuation">:</span> 30px<span class="token punctuation">,</span> $<span class="token property">border-color</span><span class="token punctuation">:</span> black<span class="token punctuation">)</span></span> <span class="token punctuation">{</span>
+  <span class="token property">width</span><span class="token punctuation">:</span> 0<span class="token punctuation">;</span>
+  <span class="token property">height</span><span class="token punctuation">:</span> 0<span class="token punctuation">;</span>
+  <span class="token property">border-width</span><span class="token punctuation">:</span> $size<span class="token punctuation">;</span>
+  <span class="token selector">border-#</span><span class="token punctuation">{</span>$direction<span class="token punctuation">}</span><span class="token property">-width</span><span class="token punctuation">:</span> 0<span class="token punctuation">;</span>
+  <span class="token atrule"><span class="token rule">@if</span> <span class="token punctuation">(</span>$direction == top<span class="token punctuation">)</span></span> <span class="token punctuation">{</span>
+    <span class="token property">border-color</span><span class="token punctuation">:</span> transparent transparent $border-color transparent<span class="token punctuation">;</span>
+    <span class="token property">border-style</span><span class="token punctuation">:</span> dashed dashed solid dashed<span class="token punctuation">;</span>
+  <span class="token punctuation">}</span> <span class="token atrule"><span class="token rule">@else</span> if <span class="token punctuation">(</span>$direction == right<span class="token punctuation">)</span></span> <span class="token punctuation">{</span>
+    <span class="token property">border-color</span><span class="token punctuation">:</span> transparent transparent transparent $border-color<span class="token punctuation">;</span>
+    <span class="token property">border-style</span><span class="token punctuation">:</span> dashed dashed dashed solid<span class="token punctuation">;</span>
+  <span class="token punctuation">}</span> <span class="token atrule"><span class="token rule">@else</span></span> <span class="token punctuation">{</span>
+    <span class="token property">border-color</span><span class="token punctuation">:</span> transparent transparent transparent $border-color<span class="token punctuation">;</span>
+    <span class="token property">border-style</span><span class="token punctuation">:</span> dashed dashed dashed solid<span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+$<span class="token property">column</span><span class="token punctuation">:</span> 12<span class="token punctuation">;</span>
+
+<span class="token atrule"><span class="token rule">@while</span> $column&gt;0</span> <span class="token punctuation">{</span>
+  <span class="token selector">.col-sm-#</span><span class="token punctuation">{</span>$column<span class="token punctuation">}</span> <span class="token punctuation">{</span>
+    <span class="token property">width</span><span class="token punctuation">:</span> $column/12 * 100%<span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+  $<span class="token property">column</span><span class="token punctuation">:</span> $column - 1<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token atrule"><span class="token rule">@for</span> $i from 1 to 4</span> <span class="token punctuation">{</span>
+  <span class="token selector">.p#</span><span class="token punctuation">{</span>$i<span class="token punctuation">}</span> <span class="token punctuation">{</span>
+    <span class="token property">width</span><span class="token punctuation">:</span> 10px<span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div>`,23),c=[e];function o(i,l){return s(),a("div",null,c)}const d=n(t,[["render",o],["__file","scss.html.vue"]]);export{d as default};
